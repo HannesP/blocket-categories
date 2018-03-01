@@ -1,4 +1,4 @@
-import requests, re
+import requests, re, json
 from registry import categories, municipalities
 
 def get_num(mun_no, cat_no):
@@ -9,15 +9,24 @@ def get_num(mun_no, cat_no):
 	m = re.search(r'"num_hits">(.*?)<', html)
 	return int(m.group(1))
 
+def get_vector(mun_no):
+	vec = []
+	for cat_no in categories:
+		num = get_num(mun_no, cat_no)
+		vec.append(num)
+	return [x/sum(vec) for x in vec]
+
 def main():
+	res = {}
+	
 	for mun_no, mun_name in municipalities.items():
 		print(mun_name)
-		print('=' * len(mun_name))
-		
-		for cat_no, cat_name in categories.items():
-			num = get_num(mun_no, cat_no)
-			print('{}: {}'.format(cat_name, num))
-		print()
+		vec = get_vector(mun_no)
+		res[mun_name] = vec
+		print('{}\n'.format([round(x,2) for x in vec]))
+
+	out = json.dumps(res, sort_keys=True, indent=4)
+	print(out)
 
 if __name__ == '__main__':
 	main()

@@ -56,5 +56,5 @@ municipalities = {
 	'23_13': 'Simrishamn',
 	'23_14': 'Trelleborg',
 	'23_15': 'Ystad',
-	'23_16': 'Ängelhol',
+	'23_16': 'Ängelholm',
 }

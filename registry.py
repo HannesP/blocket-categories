@@ -41,6 +41,7 @@ categories = {
 }
 
 municipalities = {
+	# Skåne
 	'23_1': 'Båstad',
 	'23_2': 'Eslöv',
 	'23_3': 'Helsingborg',
@@ -57,4 +58,20 @@ municipalities = {
 	'23_14': 'Trelleborg',
 	'23_15': 'Ystad',
 	'23_16': 'Ängelholm',
+	
+	# Norrbotten
+	'1_1': 'Arjeplog',
+	'1_2': 'Arvidsjaur',
+	'1_3': 'Boden',
+	'1_4': 'Gällivare',
+	'1_5': 'Haparanda',
+	'1_6': 'Jokkmokk',
+	'1_7': 'Kalix',
+	'1_8': 'Kiruna',
+	'1_9': 'Luleå',
+	'1_10': 'Pajala',
+	'1_11': 'Piteå',
+	'1_12': 'Älvsbyn',
+	'1_13': 'Överkalix',
+	'1_14': 'Övertorneå',
 }

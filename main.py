@@ -7,7 +7,7 @@ def get_num(mun_no, cat_no):
 	res = requests.get(url)
 	html = res.text
 	m = re.search(r'"num_hits">(.*?)<', html)
-	return m.group(1)
+	return int(m.group(1))
 
 def main():
 	for mun_no, mun_name in municipalities.items():

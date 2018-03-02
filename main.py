@@ -1,9 +1,13 @@
 import requests, re, json
 from registry import categories, municipalities
 
+
+# Bollnäsvarianten: https://www.blocket.se/hela_sverige?m=45&cg=6080
+
 def get_num(mun_no, cat_no):
 	params = {'cat_no': cat_no, 'mun_no': mun_no}
-	url = 'https://www.blocket.se/hela_sverige?cg={cat_no}&w=0&st=s&ps=&ca={mun_no}'.format(**params)
+#	url = 'https://www.blocket.se/hela_sverige?cg={cat_no}&w=0&st=s&ps=&ca={mun_no}'.format(**params)
+	url = 'https://www.blocket.se/hela_sverige?cg={cat_no}&ca={mun_no}&f=p'.format(**params)
 	res = requests.get(url)
 	html = res.text
 	m = re.search(r'"num_hits">(.*?)<', html)

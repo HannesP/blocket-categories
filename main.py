@@ -1,12 +1,6 @@
 import requests, re, json
 from registry import categories, municipalities
 
-
-# Bollnäsvarianten: https://www.blocket.se/hela_sverige?m=45&cg=6080
-
-
-# https://www.blocket.se/hela_sverige?q=&cg={cat_no}&w=1&m={mun_no1}&st=s&cs=&ck=&csz=&f=p&ca={mun_no2}&is=1&l=0&md=th
-
 def get_num(mun, cat_no):
 	if len(mun) == 1:
 		mun_no = mun[0]

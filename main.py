@@ -6,7 +6,6 @@ from registry import categories, municipalities
 
 def get_num(mun_no, cat_no):
 	params = {'cat_no': cat_no, 'mun_no': mun_no}
-#	url = 'https://www.blocket.se/hela_sverige?cg={cat_no}&w=0&st=s&ps=&ca={mun_no}'.format(**params)
 	url = 'https://www.blocket.se/hela_sverige?cg={cat_no}&ca={mun_no}&f=p'.format(**params)
 	res = requests.get(url)
 	html = res.text

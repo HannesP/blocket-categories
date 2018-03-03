@@ -5,7 +5,7 @@ def get_num(mun, cat_no):
 	if len(mun) == 1:
 		mun_no = mun[0]
 		params = {'cat_no': cat_no, 'mun_no': mun_no}
-		url_temp = 'https://www.blocket.se/hela_sverige?cg={cat_no}&ca={mun_no}&f=p'
+		url_temp = 'https://www.blocket.se/hela_sverige?ca={mun_no}&w=0&cg={cat_no}&f=p'
 	else:
 		mun_no1, mun_no2 = mun
 		params = {'mun_no1': mun_no1, 'mun_no2': mun_no2, 'cat_no': cat_no}
@@ -37,12 +37,12 @@ def main():
 	
 	for mun_name, mun in municipalities.items():
 		if mun_name in res:
-			continue
+			pass#continue
 		
 		try:
 			vec = get_vector(mun)
 			res[mun_name] = vec
-			json.dump(res, open(filename, 'w'), ensure_ascii=False)
+			#json.dump(res, open(filename, 'w'), ensure_ascii=False)
 			
 			print(mun_name)
 			print('{}\n'.format([round(x,2) for x in vec]))
@@ -56,3 +56,4 @@ def main():
 
 if __name__ == '__main__':
 	main()
+	

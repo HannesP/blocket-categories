@@ -6,10 +6,12 @@ Install in your favourite way, e.g.
     $ source ~/.venvs/blocket/bin/activate
     $ pip install -r requirements.txt
 
-Generate data for Skåne:
+Generate data and plot data:
 
     $ python main.py
+    $ python plot.py
+        
+Or use the supplied data:
 
-Dimensionality reduction & plotting:
-
+    $ mv res-20180303.json res.json
     $ python plot.py

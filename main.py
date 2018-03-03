@@ -37,12 +37,11 @@ def main():
 	
 	for mun_name, mun in municipalities.items():
 		if mun_name in res:
-			pass#continue
-		
+			continue		
 		try:
 			vec = get_vector(mun)
 			res[mun_name] = vec
-			#json.dump(res, open(filename, 'w'), ensure_ascii=False)
+			json.dump(res, open(filename, 'w'), ensure_ascii=False)
 			
 			print(mun_name)
 			print('{}\n'.format([round(x,2) for x in vec]))

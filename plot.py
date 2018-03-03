@@ -17,7 +17,4 @@ trace = Scatter(
 	text=list(data.keys()),
 )
 
-#layout = Layout(hovermode= 'closest')
-#figure = Figure(data=trace)
-
 plot([trace])

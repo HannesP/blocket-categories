@@ -15,7 +15,6 @@ def get_num(mun, cat_no):
 			url_temp = 'https://www.blocket.se/hela_sverige?q=&cg={cat_no}&w=1&m={mun_no1}&st=s&cs=&ck=&csz=&f=p&ca={mun_no2}&is=1&l=0&md=th'
 
 	url = url_temp.format(**params)
-	print(url)
 	res = requests.get(url)
 	html = res.text
 	m = re.search(r'"num_hits">(.*?)<', html)
@@ -50,7 +49,7 @@ def main():
 			print(mun_name)
 			print(mun)
 		
-	out = json.dumps(res, sort_keys=True, indent=4)
+	out = json.dumps(res, ensure_ascii=False, indent=4)
 	print(out)
 
 if __name__ == '__main__':

@@ -1,37 +1,8 @@
 import json
-from collections import defaultdict
-
 import sklearn.manifold
 from plotly.graph_objs import Scatter, Figure, Layout
 from plotly.offline import plot
-
-from registry import municipalities
-
-regions = [
-	'Skåne',
-	'Norrbotten',
-	'Västerbotten',
-	'Jämtland',
-	'Västernorrland',
-	'Gävleborg',
-	'Dalarna',
-	'Värmland',
-	'Örebro',
-	'Västmanland',
-	'Uppsala',
-	'Stockholm',
-	'Södermanland',
-	'Skaraborg',
-	'Östergötland',
-	'Göteborg',
-	'Älvsborg',
-	'Jönköping',
-	'Kalmar',
-	'Gotland',
-	'Halland',
-	'Kronoberg',
-	'Blekinge'
-]
+from registry import regions, municipalities
 
 def mun_name_to_reg_no(mun_name):
 	info = municipalities[mun_name]
@@ -52,7 +23,7 @@ mds = sklearn.manifold.MDS()
 fit = mds.fit_transform(mat)
 
 traces = []
-for reg_no in range(23):
+for reg_no in range(len(regions)):
 	try:
 		indices = indices_for_reg_no(reg_no, data.keys())
 		trace = Scatter(

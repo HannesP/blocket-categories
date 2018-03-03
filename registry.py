@@ -40,6 +40,32 @@ categories = {
     '8040': 'Övrigt'
 }
 
+regions = [
+	'Skåne',
+	'Norrbotten',
+	'Västerbotten',
+	'Jämtland',
+	'Västernorrland',
+	'Gävleborg',
+	'Dalarna',
+	'Värmland',
+	'Örebro',
+	'Västmanland',
+	'Uppsala',
+	'Stockholm',
+	'Södermanland',
+	'Skaraborg',
+	'Östergötland',
+	'Göteborg',
+	'Älvsborg',
+	'Jönköping',
+	'Kalmar',
+	'Gotland',
+	'Halland',
+	'Kronoberg',
+	'Blekinge'
+]
+
 municipalities = {
 	# Skåne
 	'Båstad': ('23_1',),
